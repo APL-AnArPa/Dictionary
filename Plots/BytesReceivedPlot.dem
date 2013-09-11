@@ -1,0 +1,19 @@
+#set xrange [0:100]
+set autoscale
+set terminal svg size 600,400 dynamic enhanced fname 'arial' fsize 10 mousing name "simple_1" butt solid 
+set output 'TotalBytesReceived.svg'
+set title "Total bytes received vs Simulation Time"
+set xlabel "Simulation Time (second)"
+set ylabel "Total bytes received (GB)"
+plot "TotalBytesRcvd.txt" using 1:2 with lines title ""
+#pause -1 "Hit return to continue"
+
+
+set autoscale
+set terminal svg size 600,400 dynamic enhanced fname 'arial' fsize 10 mousing name "simple_1" butt solid 
+set output 'Throughput.svg'
+set title "Throughput vs Simulation Time"
+set xlabel "Simulation Time (second)"
+set ylabel "Throughput (Kbps)"
+plot "CumulativeThroughput.txt" using 1:2 with lines title ""
+#pause -1 "Hit return to continue"
