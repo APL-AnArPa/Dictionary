@@ -8,7 +8,7 @@ import java.lang.Math;
 
 public abstract class DictionaryADT 
 {
-	public void PopulateDictionary(String InputFileName, String TimeFileInsert)
+	public void PopulateDictionary(String InputFileName, String TimeFileInsert) //Populate dictionary using given input text file
 	{
 		try
 		{
@@ -56,7 +56,7 @@ public abstract class DictionaryADT
 			e.printStackTrace();
 		}
 	}
-	public void LocateInDictionary(String  SearchFileName, String TimeFileSearch)
+	public void LocateInDictionary(String  SearchFileName, String TimeFileSearch) 
 	{
 		try
 		{
