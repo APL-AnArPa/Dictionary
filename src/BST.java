@@ -21,12 +21,13 @@ public class BST extends DictionaryADT
 	   		while(x != null)
 	   		{
 	   			y=x;
-				if(val == x.value) 
-				{
-					System.out.println(x.value + " already exists");
-					return;
-				}
-				else if(val < x.value)
+//				if(val == x.value) 
+//				{
+//					System.out.println(x.value + " already exists");
+//					return;
+//				}
+//				else if(val < x.value)
+				if(val < x.value)
 					x=x.left;
 				else
 					x=x.right;
