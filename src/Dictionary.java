@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-
+//Base class To implement Dictionary Operation 
 
 public class Dictionary 
 {
@@ -66,7 +66,7 @@ public class Dictionary
 		Menu(obj);
 	}
 
-	private static void Menu(DictionaryADT obj) 
+	private static void Menu(DictionaryADT obj)    
 	{
 		System.out.println("Choose one of the following options:");
 	    try 
