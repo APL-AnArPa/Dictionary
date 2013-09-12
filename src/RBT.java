@@ -1,15 +1,16 @@
+//Class to Implement RB Tree Operations
 public class RBT extends DictionaryADT
 {
 	private RBNode root, NIL;
 	
-	public RBT()
+	public RBT()   //Constructer
 	{
 		NIL = new RBNode();
 		NIL.color = "black";
 		root = NIL;
 	}
 
-	private boolean LeftRotate(RBNode x)
+	private boolean LeftRotate(RBNode x)  //Performs Left Rotation On given element
 	{
 		if(x.right == NIL)
 			return false;
@@ -42,7 +43,7 @@ public class RBT extends DictionaryADT
 		return true;
 	}
 
-	private boolean RightRotate(RBNode x)
+	private boolean RightRotate(RBNode x) //Performs right rotation on given element
 	{
 		if(x.left == NIL)
 			return false;
@@ -75,7 +76,7 @@ public class RBT extends DictionaryADT
 		return true;
 	}
 
-	private void RBInsertFixup(RBNode z)
+	private void RBInsertFixup(RBNode z) //Handle The case when parent of newly inserted red node is also red
 	{
 		while(z.parent.color == "red")
 		{
@@ -127,7 +128,7 @@ public class RBT extends DictionaryADT
 		root.color = "black";		//HIGHLY DOUBTFUL - root has not been updated after rotations
 	}
 
-	public void Insert(int val)
+	public void Insert(int val) //Insertion In RBT
 	{
 		RBNode z = new RBNode();
 		z.value = val;		
@@ -162,14 +163,14 @@ public class RBT extends DictionaryADT
 		RBInsertFixup(z);
 	}
 	
-	private RBNode min(RBNode x)
+	private RBNode min(RBNode x)  //Find minimum element in RBT
 	{
 		while(x.left != NIL)
 			x = x.left;
 		return x;	
 	}
 
-	private RBNode successor(RBNode x)
+	private RBNode successor(RBNode x)  //Find Successor of a given node
 	{
 		RBNode y = NIL;
 		if(x.right != NIL)
@@ -185,7 +186,7 @@ public class RBT extends DictionaryADT
 
 	}
 
-	private RBNode Search(RBNode x, int val)
+	private RBNode Search(RBNode x, int val) //Search a given node in RBT
 	{
 		if(x == NIL)
 			return NIL;
@@ -197,7 +198,7 @@ public class RBT extends DictionaryADT
 			return Search(x.left, val);
 	}
 
-	private void RBDeleteFixup(RBNode x)
+	private void RBDeleteFixup(RBNode x)  //Handle the cases when RBT properties are violated after deletion
 	{
 		while((x != root) && (x.color == "black"))
 		{
@@ -269,7 +270,7 @@ public class RBT extends DictionaryADT
 		x.color = "black";
 	}
 
-	public boolean Delete(int val)
+	public boolean Delete(int val)  //Delete a Given node from BST
 	{
 		RBNode x = NIL, y = NIL, z = NIL;
 		if (root != NIL)
@@ -313,7 +314,7 @@ public class RBT extends DictionaryADT
 	}
 
 	
-	private void inorder(RBNode x)
+	private void inorder(RBNode x) //Give Inorder Traversing Order of RBT
 	{
 		if(x == NIL)
 			return;
@@ -322,7 +323,7 @@ public class RBT extends DictionaryADT
 	     	inorder(x.right);
 	}
 
-	public void DisplayADT()
+	public void DisplayADT()  //Display elements of RBT in Inorder Traversal
 	{
 		if(root != NIL)
 			inorder(root);
@@ -331,7 +332,7 @@ public class RBT extends DictionaryADT
 	
 	}
 
-	public boolean Search(int val)
+	public boolean Search(int val)  //Search a given node in RBT
 	{
 		RBNode x = NIL;
 		if(root != NIL)
