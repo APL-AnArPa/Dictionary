@@ -2,6 +2,8 @@ rm -f ../Files/*
 python generateDicLoc.py
 cd ../src/
 
+javac  Dictionary.java
+
 java Dictionary ../Files/Dictionary1.txt ../Files/Locate1.txt -t ../Files/TimeFileInsert_RBT.txt ../Files/TimeFileSearch_RBT.txt
 java Dictionary ../Files/Dictionary2.txt ../Files/Locate2.txt -t ../Files/TimeFileInsert_RBT.txt ../Files/TimeFileSearch_RBT.txt
 java Dictionary ../Files/Dictionary3.txt ../Files/Locate3.txt -t ../Files/TimeFileInsert_RBT.txt ../Files/TimeFileSearch_RBT.txt
