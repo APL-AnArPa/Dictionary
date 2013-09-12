@@ -1,3 +1,4 @@
+//BST Oprations
 public class BST extends DictionaryADT
 {
 	private Node root;
@@ -7,7 +8,7 @@ public class BST extends DictionaryADT
 		root = null;
 	}
 
-	public void Insert(int val)
+	public void Insert(int val)  //Insertion In BST
 	{
 		Node x = null, y  = null, z;
 		z = new Node();
@@ -38,7 +39,7 @@ public class BST extends DictionaryADT
 		}
 	}
 	
-	public boolean Search(int val)
+	public boolean Search(int val)  //Search in BST
 	{
 		Node x = null;
 		if(root != null)
@@ -61,7 +62,7 @@ public class BST extends DictionaryADT
 			return Search(x.left, val);
 	}
 
-	public boolean Delete(int val)
+	public boolean Delete(int val)   //Delete Node From BST
 	{
 		Node x = null, y = null, z = null;
 		if (root != null)
@@ -97,14 +98,14 @@ public class BST extends DictionaryADT
 			return false;
 	}
 	
-	private Node min(Node x)
+	private Node min(Node x)   //Finds Minimum Node in BST
 	{
 		while(x.left!=null)
 			x=x.left;
 		return x;	
 	}
 
-	private Node successor(Node x)
+	private Node successor(Node x)   //Finds Successor of given node
 	{
 		Node y = null;
 		if(x.right != null)
@@ -117,7 +118,7 @@ public class BST extends DictionaryADT
     	return y;
 	}
 
-	public void DisplayADT()
+	public void DisplayADT()    //Display All Elements of BST
 	{
 		if(root != null)
 			inorder(root);
@@ -126,7 +127,7 @@ public class BST extends DictionaryADT
 	
 	}
 
-	private void inorder(Node x)
+	private void inorder(Node x)  //To Find Inorder Traversal Order of BST
 	{
 	   if(x == null)
 		   return;
@@ -142,7 +143,7 @@ public class BST extends DictionaryADT
 }
 	
 
-class Node
+class Node                   //Class Node to create an Object for bST node
 {
 	int value;
 	Node left;
